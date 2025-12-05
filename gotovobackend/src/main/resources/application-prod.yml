@@ -1,0 +1,27 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/gotovowebdb # Хост локальный, если БД на том же VDS
+    username: Malkollm
+    password: f123456987
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate # validate, update, none - но не create или create-drop!
+    show-sql: false # Отключить в продакшене
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: false # Отключить в продакшене
+
+server:
+  port: 8080 # Порт, на котором будет слушать ваше приложение
+
+jwt:
+  secret: RmYhMTI2Mzg2OTY= # Укажите ваш фиксированный ключ
+  expiration: 86400000
+
+# springdoc:
+#   swagger-ui:
+#     enabled: false # Отключить Swagger UI в продакшене
+#   api-docs:
+#     enabled: false # Или отключить API Docs
